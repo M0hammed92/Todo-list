@@ -34,20 +34,16 @@ class _TodoListState extends State<TodoList> {
   }
 
   void _addTodoItem(String title) {
-    // Wrapping it inside a set state will notify
-    // the app that the state has changed
     setState(() {
       _todoList.add(title);
     });
     _textFieldController.clear();
   }
 
-  // Generate list of item widgets
   Widget _buildTodoItem(String title) {
     return ListTile(title: Text(title));
   }
 
-  // Generate a single item widget
   Future<Future> _displayDialog(BuildContext context) async {
     return showDialog(
         context: context,
